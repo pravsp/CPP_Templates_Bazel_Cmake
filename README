@@ -1,0 +1,46 @@
+###################################################
+# Cplusplus Template library
+###################################################
+
+# The code is integrated with gtest suite and can execute unit test with gtest
+
+# Build can be triggered in 2 ways
+
+    1. Bazel Build
+    2. cmake Build
+
+Bazel Build
+------------
+Follow the below steps to build using bazel build
+STEP1: Clone the workspace
+STEP2: Get into the workspace
+STEP3: Clean any existing build using the below command
+    `bazel clean --expunge`
+STEP4: Trigger the Bazel test as follows
+    `bazel test //template_lib/test:template_test`
+                    (or)
+    `bazel test -s //template_lib/test:template_test`
+    # Use -s option only to enable verbose mode of commands used by bazel
+
+The above steps will trigger the test using the gtest suite along with results
+
+NOTE: While using Bazel build Gtest suite is being compiled locally. Raised the following git issue
+https://github.com/google/googletest/issues/2617
+
+Cmake Build
+-----------
+Follow the below steps to build using cmake build
+
+STEP1: Clone the workspace
+STEP2: Get into the workspace
+STEP3: Create your new build directory
+STEP4: Get into the build directory
+STEP5: Issue the cmake command
+    `cmake ../`
+STEP6: Once the cmake is complete issue the make command
+    `make`
+STEP7: This would build your environment and an application is built using gtest suite
+STEP8: This would create a lib folder in workspace and bin folder in workspace
+STEP9: Template library will be created in <workspace>/lib folder
+STEP10: Test application will be created in <workspace>/bin folder
+
